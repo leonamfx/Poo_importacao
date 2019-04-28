@@ -25,11 +25,17 @@ public class LeituraArquivo {
 	}
 	
 	public static void main(String args[]) throws IOException,FileNotFoundException {
-		LeituraArquivo la = new LeituraArquivo();
-		String dir = System.getProperty("user.dir") + "/arquivos/";
-		List<String> lista = la.lerArquivo(dir+"Cliente_20140220.txt");
-		System.out.println(lista);
+		String pathArquivo = System.getProperty("user.dir") + "/arquivos/"; //Define path
+		File docs = new File(pathArquivo); //New Doc on path
+		File []arquivos = docs.listFiles();  //Include all docs on array		
 		
+		for (File arquivo : arquivos) {
+			LeituraArquivo la = new LeituraArquivo();
+			//String dir = System.getProperty("user.dir") + "/arquivos/";
+			List<String> lista = la.lerArquivo(pathArquivo+arquivo.getName());
+			System.out.println(lista);
+		}
 	}
+	
 
 }
