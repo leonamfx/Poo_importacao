@@ -1,12 +1,11 @@
 import java.text.ParseException;
-import java.util.List;
 
 import model.domain.ContaImportacao;
 
 public class ProcessadoraConta implements ProcessadorLinha<ContaImportacao> {
 	
 	@Override
-	public ContaImportacao getLinha(String linha) throws ParseException {
+	public ContaImportacao getLinha(String linha, String cabecalho) throws ParseException {
 		ContaImportacao conta = new ContaImportacao();
 		conta.setTipo(linha.charAt(1));
 		conta.setCpf(linha.substring(2,13));						
@@ -21,14 +20,14 @@ public class ProcessadoraConta implements ProcessadorLinha<ContaImportacao> {
 		return conta;
 	}
 	
-	public static void main(String args[]) throws Exception {
-		String dir = System.getProperty("user.dir") + "/arquivos/";
-		ProcessadoraArquivo<ContaImportacao> processadora = 
-				new ProcessadoraArquivo<ContaImportacao>(new ProcessadoraConta());
-		List<ContaImportacao> contas = 
-				processadora.processaArquivo(dir+"Conta_20140220.txt");
-		System.out.println(contas);	
-	}
+//	public static void main(String args[]) throws Exception {
+//		String dir = System.getProperty("user.dir") + "/arquivos/";
+//		ProcessadoraArquivo<ContaImportacao> processadora = 
+//				new ProcessadoraArquivo<ContaImportacao>(new ProcessadoraConta());
+//		List<ContaImportacao> contas = 
+//				processadora.processaArquivo(dir+"Conta_20140220.txt");
+//		System.out.println(contas);	
+//	}
 
 	
 
