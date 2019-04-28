@@ -14,6 +14,9 @@ public class ProcessadoraTransacao implements ProcessadorLinha<TransacaoImportac
 				String dataTransacao = linha.substring(27,35);
 				SimpleDateFormat sdf = new SimpleDateFormat("ddMMyyyy");
 				transacao.setDataTransacao(sdf.parse(dataTransacao));
+				//String horaTrans = linha.substring(35,41);
+				//SimpleDateFormat sdf1 = new SimpleDateFormat("HH:mm:ss");
+				//transacao.setHoraTransacao(sdf1.parse(horaTrans));
 				transacao.setHoraTransacao(linha.substring(35,41));
 				transacao.setCodEstabelecimento(new Integer(linha.substring(41,47)));
 		        return transacao;
