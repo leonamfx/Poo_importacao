@@ -24,18 +24,18 @@ public class LeituraArquivo {
 		return lista;
 	}
 	
-	public static void main(String args[]) throws IOException,FileNotFoundException {
-		String pathArquivo = System.getProperty("user.dir") + "/arquivos/"; //Define path
-		File docs = new File(pathArquivo); //New Doc on path
-		File []arquivos = docs.listFiles();  //Include all docs on array		
-		
-		for (File arquivo : arquivos) {
-			LeituraArquivo la = new LeituraArquivo();
-			//String dir = System.getProperty("user.dir") + "/arquivos/";
-			List<String> lista = la.lerArquivo(pathArquivo+arquivo.getName());
-			System.out.println(lista);
-		}
-	}
+//	public static void main(String args[]) throws IOException,FileNotFoundException {
+//		String pathArquivo = System.getProperty("user.dir") + "/arquivos/"; //Define path
+//		File docs = new File(pathArquivo); //New Doc on path
+//		File []arquivos = docs.listFiles();  //Include all docs on array		
+//		
+//		for (File arquivo : arquivos) {
+//			LeituraArquivo la = new LeituraArquivo();
+//			//String dir = System.getProperty("user.dir") + "/arquivos/";
+//			List<String> lista = la.lerArquivo(pathArquivo+arquivo.getName());
+//			System.out.println(lista);
+//		}
+//	}
 	
 
 }
