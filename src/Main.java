@@ -1,10 +1,15 @@
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.text.ParseException;
 import java.util.Arrays;
 import java.util.List;
 
 public class Main {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws FileNotFoundException, IOException, ClassNotFoundException
+	, InstantiationException, IllegalAccessException, ParseException {
+	
 		File arquivos[] = Getpath.getGetpath();
 		String pathAr = Getpath.getPathArquivo(); 
 	    Arrays.sort(arquivos);
@@ -17,6 +22,5 @@ public class Main {
 	    }
 	}
 
-	}
 
 }
