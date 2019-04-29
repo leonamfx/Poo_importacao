@@ -5,7 +5,7 @@ import model.domain.ContaImportacao;
 public class ProcessadoraConta implements ProcessadorLinha<ContaImportacao> {
 	
 	@Override
-	public ContaImportacao getLinha(String linha, String cabecalho) throws ParseException {
+	public ContaImportacao getLinha(String linha) throws ParseException {
 		ContaImportacao conta = new ContaImportacao();
 		conta.setTipo(linha.charAt(1));
 		conta.setCpf(linha.substring(2,13));						

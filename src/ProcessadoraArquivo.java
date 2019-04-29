@@ -18,11 +18,10 @@ public class ProcessadoraArquivo<E extends Lote> {
 		//LeituraArquivo leitura = new LeituraArquivo();
 		List<E> listaConta = new ArrayList<>();
 		//List<String> listaString = leitura.lerArquivo(arquivo);
-		//TODO implementar
-		String cabecalho = listString.get(0);		
+		//TODO implementar		
 		listString.remove(0);
 		for (String linha: listString) {
-			listaConta.add(processa.getLinha(linha, cabecalho));
+			listaConta.add(processa.getLinha(linha));
 		}
 		return listaConta; 		
 	}

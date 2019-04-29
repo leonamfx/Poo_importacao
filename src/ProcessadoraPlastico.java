@@ -4,7 +4,7 @@ import model.domain.PlasticoImportacao;
 
 public class ProcessadoraPlastico implements ProcessadorLinha<PlasticoImportacao> {
     @Override
-    public PlasticoImportacao getLinha(String linha,String cabecalho) throws ParseException {
+    public PlasticoImportacao getLinha(String linha) throws ParseException {
 		PlasticoImportacao plastico = new PlasticoImportacao();
 		plastico.setNumeroConta(linha.substring(1,8));
 		plastico.setNomeInseridoPlastico(linha.substring(8,38).trim());

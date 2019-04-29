@@ -5,6 +5,8 @@ import java.text.ParseException;
 import java.util.Arrays;
 import java.util.List;
 
+import model.domain.Lote;
+
 public class Main {
 
 	public static void main(String[] args) throws FileNotFoundException, IOException, ClassNotFoundException
@@ -17,8 +19,10 @@ public class Main {
 	            LeituraArquivo LA = new LeituraArquivo();
 	            List<String> lista = LA.lerArquivo(pathAr + arquivo.getName());
 	            String arquivoName=  LA.getArquivoName();
-	            ProcessadoraArquivo processadora = new ProcessadoraArquivo(ProcessadorInjeta.getProcessadorLinha(arquivoName)); 
-	            System.out.println(processadora.processaArquivo(lista));
+	            ProcessadoraArquivo processdoraArquivo = new ProcessadoraArquivo(ProcessadoraX.valueOf(arquivoName).getProcessadorLinha()); 
+	            System.out.println(processdoraArquivo.processaArquivo(lista));
+	            List<Lote> resultado = processdoraArquivo.processaArquivo(lista);
+	            System.out.println(resultado);
 	    }
 	}
 

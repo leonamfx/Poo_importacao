@@ -31,7 +31,7 @@ public class LeituraArquivo {
 	//Capiturar o nome da Classe + nome do arquivo 
 	public String getArquivoName() {
 		String[] str= arquivoName.split("_");
-        return "Processadora"+str[0].toString();
+        return "ProcClass"+str[0].toString();
 	}
 	
 	public void setArquivoName(String arquivoName) {

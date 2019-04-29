@@ -6,7 +6,7 @@ import model.domain.TransacaoImportacao;
 public class ProcessadoraTransacao implements ProcessadorLinha<TransacaoImportacao> {
 
 	@Override
-	public TransacaoImportacao getLinha(String linha, String cabecalho) throws ParseException {
+	public TransacaoImportacao getLinha(String linha) throws ParseException {
 			TransacaoImportacao transacao = new TransacaoImportacao();
 				transacao.setNumeroConta(linha.substring(1,8));
 				transacao.setNumeroPlastico(linha.substring(8,15).trim());
